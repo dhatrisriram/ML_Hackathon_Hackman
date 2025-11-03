@@ -70,11 +70,11 @@ Evaluation & Score
 ### **Rewards**
 | Action | Reward |
 |---|---|
-Correct guess | +1.0  
-Wrong guess | -1.0  
-Repeated guess | -0.1  
-Win | +5.0  
-Lose | -5.0  
+Correct guess | +2.0  
+Wrong guess | -1.5  
+Repeated guess | -2.0  
+Win | +20.0  
+Lose | -15.0  
 
 ### **Exploration Strategy**
 - ε-greedy with exponential decay (1.0 → 0.05)
@@ -85,13 +85,20 @@ Lose | -5.0
 
 | Parameter | Value |
 |---|---|
-Learning Rate | 0.001  
-Batch Size | 64  
-Replay Buffer | 10,000  
+Episodes | 50,000  
+Learning Rate | 0.0001  
+Batch Size | 128  
+Replay Buffer Size | 500,000  
 Discount Factor (γ) | 0.99  
-Initial ε | 1.0 → 0.05  
+Target Network Update Frequency | Every 500 steps  
+Network Architecture | 256 → 256 → 128 (FC layers)  
 Optimizer | Adam  
-Target Network Update | Every 200 steps  
+Update Every | 4 steps  
+ε-Start | 1.0  
+ε-Decay | 0.9995  
+ε-Min | 0.05  
+HMM Weight | 0.4  
+RL Weight | 0.6  
 
 ---
 
@@ -102,6 +109,18 @@ Target Network Update | Every 200 steps
 - 🔁 Avg repeated guesses/game
 - 🧮 Final hackathon score
 - 📈 Reward convergence graph
+
+---
+
+## 🧪 Evaluation Results
+
+| Metric | Value |
+|---|---|
+Total Words Tested | 2000  
+Correctly Guessed | 362  
+Success Rate | 18.1%  
+Total Score | −8030  
+Average Score | −4.015 / game  
 
 ---
 
