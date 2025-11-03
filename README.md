@@ -70,11 +70,11 @@ Evaluation & Score
 ### **Rewards**
 | Action | Reward |
 |---|---|
-Correct guess | +10  
-Wrong guess | -5  
-Repeated guess | -10  
-Win | +50  
-Lose | -50  
+Correct guess | +1.0  
+Wrong guess | -1.0  
+Repeated guess | -0.1  
+Win | +5.0  
+Lose | -5.0  
 
 ### **Exploration Strategy**
 - ε-greedy with exponential decay (1.0 → 0.05)
